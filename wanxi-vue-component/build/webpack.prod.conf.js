@@ -7,8 +7,8 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
@@ -32,9 +32,9 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
-    // new webpack.DefinePlugin({
-    //   'process.env': env
-    // }),
+    new webpack.DefinePlugin({
+      'process.env': env
+    }),
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
@@ -45,11 +45,14 @@ const webpackConfig = merge(baseWebpackConfig, {
       parallel: true
     }),
     // extract css into its own file
-
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
-      ignoreOrder: true
+    new ExtractTextPlugin({
+      filename: utils.assetsPath('css/[name].[contenthash].css'),
+      allChunks: false,
     }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'css/[name].[contenthash].css',
+    //   ignoreOrder: true
+    // }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({

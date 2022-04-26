@@ -1,9 +1,9 @@
-// import manage from './api/manage'
+import manage from 'wanxi-vue-fm/src/api/manage'
 
 const components = {
   install(Vue){
     Vue.componet (
-      // 'manage', manage
+      'manage', manage
   )
   }
 }

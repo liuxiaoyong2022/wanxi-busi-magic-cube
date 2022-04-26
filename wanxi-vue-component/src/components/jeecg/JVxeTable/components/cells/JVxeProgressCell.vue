@@ -41,7 +41,8 @@
           } else {
             return value
           }
-        } catch {
+        } catch (error) {
+          console.error(error);
           return 0
         }
       },

@@ -60,7 +60,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test'),resolve('node_modules/wanxi-vue-fm')],
+        options: {
+          presets: ['stage-3'],
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -86,20 +89,22 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
-      {
-        test: /\.less$/,
-        use: [{
-          loader: "style-loader" // creates style nodes from JS strings
-        }, {
-          loader: "css-loader" // translates CSS into CommonJS
-        }, {
-          loader: "less-loader" // compiles Less to CSS
-        }]
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      }
+      //1. 独立运行webpack.base.conf时需要引入  less,css loader
+      //2. 当运行webpack.prod.conf.js时需要关闭 less,css loader....
+      // {
+      //   test: /\.less$/,
+      //   use: [{
+      //     loader: "style-loader" // creates style nodes from JS strings
+      //   }, {
+      //     loader: "css-loader" // translates CSS into CommonJS
+      //   }, {
+      //     loader: "less-loader" // compiles Less to CSS
+      //   }]
+      // },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+      // }
     ]
   },
   node: {

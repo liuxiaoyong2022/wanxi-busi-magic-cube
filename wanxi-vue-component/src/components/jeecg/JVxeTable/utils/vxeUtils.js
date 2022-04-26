@@ -31,7 +31,7 @@ export function getInputNumberMaxValue(col, rowsValues) {
     let val = rowValue[col.key], num
     try {
       num = Number.parseFloat(val)
-    } catch {
+    } catch (error) {
       num = 0
     }
     // 把首次循环的结果当成最大值

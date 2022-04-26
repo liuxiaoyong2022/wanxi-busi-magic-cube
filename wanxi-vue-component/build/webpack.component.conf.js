@@ -23,7 +23,8 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    LoginAccount: './src/components/login/LoginAccount.vue'
+    LoginAccount: './src/components/login/LoginAccount.vue',
+    JEditableTable: './src/components/jeecg/JEditableTable.vue'
   },
   output: {
     path: config.build.assetsRoot,
@@ -61,7 +62,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test'),resolve('node_modules/wanxi-vue-fm')],
+        options: {
+          presets: ['stage-3'],
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

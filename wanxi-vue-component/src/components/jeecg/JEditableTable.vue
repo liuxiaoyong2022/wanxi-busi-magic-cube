@@ -1433,7 +1433,8 @@
           let val = item[column.key], num
           try {
             num = parseInt(val)
-          } catch {
+          } catch (error) {
+            console.log('---> error:'+error);
             num = 0
           }
           // 把首次循环的结果当成最大值

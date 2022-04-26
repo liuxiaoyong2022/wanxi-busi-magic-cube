@@ -60,7 +60,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test')],
+        options: {
+          presets: ['stage-2'],
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -85,21 +88,21 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-      {
-        test: /\.less$/,
-        use: [{
-          loader: "style-loader" // creates style nodes from JS strings
-        }, {
-          loader: "css-loader" // translates CSS into CommonJS
-        }, {
-          loader: "less-loader" // compiles Less to CSS
-        }]
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
       }
+      // {
+      //   test: /\.less$/,
+      //   use: [{
+      //     loader: "style-loader" // creates style nodes from JS strings
+      //   }, {
+      //     loader: "css-loader" // translates CSS into CommonJS
+      //   }, {
+      //     loader: "less-loader" // compiles Less to CSS
+      //   }]
+      // },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+      // }
     ]
   },
   node: {
