@@ -1,0 +1,82 @@
+xiaoyongliu@xiaoyongs-iMac common % npm adduser --registry http://127.0.0.1:4873/     1----->  进入到common目录下执行 npm adduser
+npm notice Log in on http://127.0.0.1:4873/
+Username: lxy
+Password:
+Email: (this IS public) lxyxd_2019@outlook.com
+Logged in as lxy on http://127.0.0.1:4873/.
+xiaoyongliu@xiaoyongs-iMac common % npm publish --registry http://127.0.0.1:4873/      2----->  然后执行 npm publish
+npm notice
+npm notice package: common@0.1.2
+npm notice === Tarball Contents ===
+npm notice 180B  index.js
+npm notice 1.1kB package.json
+npm notice 3.0kB src/assets/audio.gif
+npm notice 9.1kB src/assets/audio.png
+npm notice 1.8kB src/assets/loading.gif
+npm notice 6.8kB src/assets/logo.png
+npm notice 5.5kB src/components/player.vue
+npm notice 1.4kB src/components/playerPicker.vue
+npm notice 94B   src/backmain.js
+npm notice === Tarball Details ===
+npm notice name:          common
+npm notice version:       0.1.2
+npm notice filename:      common-0.1.2.tgz
+npm notice package size:  22.7 kB
+npm notice unpacked size: 29.0 kB
+npm notice shasum:        69c6cd323911b8aa31edb18235a3e338a1a7f522
+npm notice integrity:     sha512-KpKdgy+GH4rXM[...]UB1HojweA3NSA==
+npm notice total files:   9
+npm notice
+npm notice Publishing to http://127.0.0.1:4873/
+npm ERR! code EPUBLISHCONFLICT
+npm ERR! publish fail Cannot publish over existing version.
+npm ERR! publish fail Update the 'version' field in package.json and try again.
+npm ERR! publish fail
+npm ERR! publish fail To automatically increment version numbers, see:
+npm ERR! publish fail     npm help version
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/xiaoyongliu/.npm/_logs/2022-04-04T06_06_56_861Z-debug-0.log
+xiaoyongliu@xiaoyongs-iMac common % npm version patch                             3------->出现版本问题后需要设置版本类型  npm version <update_type>  (patch, major, or minor):
+v1.0.0
+xiaoyongliu@xiaoyongs-iMac common % npm publish --registry http://192.168.110.163:4873/   4----------->重新发布
+npm notice
+npm notice package: common@1.0.0
+npm notice === Tarball Contents ===
+npm notice 180B  index.js
+npm notice 1.1kB package.json
+npm notice 3.0kB src/assets/audio.gif
+npm notice 9.1kB src/assets/audio.png
+npm notice 1.8kB src/assets/loading.gif
+npm notice 6.8kB src/assets/logo.png
+npm notice 5.5kB src/components/player.vue
+npm notice 1.4kB src/components/playerPicker.vue
+npm notice 94B   src/backmain.js
+npm notice === Tarball Details ===
+npm notice name:          common
+npm notice version:       1.0.0
+npm notice filename:      common-1.0.0.tgz
+npm notice package size:  22.7 kB
+npm notice unpacked size: 29.0 kB
+npm notice shasum:        32f6985f89e00356b6845b76d7a74b2a350638eb
+npm notice integrity:     sha512-V2DJWMD4BjlbE[...]WlSDSLlg/DnFw==
+npm notice total files:   9
+npm notice
+npm notice Publishing to http://127.0.0.1:4873/
++ common@1.0.0
+
+
+npm unpublish  wanxi-vue-fm@2.0.4   --registry http://127.0.0.1:4873/    ---->取消发布
+
+npm unpublish  wanxi-vue-fm --force  --registry http://127.0.0.1:4873/    --->取消发布整个包(所有版本)
+
+*** 1. 关于生成componentA以及componentB
+path:/src/views/componentA.js
+输入标签 <el-input> 改为   <a-input>
+运行  npm run build    ---->build =>node build/build.js  ---->build.js ----> const webpackConfig = require('./webpack.async-components.prod.conf')
+
+*** 2. build index.js
+npm run build    ---->build =>node build/build.js  ---->build.js ----> const webpackConfig = require('./webpack.base.conf')
+entry: {
+    app: './src/index.js'
+  },
