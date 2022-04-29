@@ -22,7 +22,8 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    wanxi: './src/components/layouts/TabLayout.vue'
+    // wanxi: './src/components/layouts/TabLayout.vue'
+    wanxi: './src/index.js'
   },
   output: {
     path: config.build.assetsRoot,
