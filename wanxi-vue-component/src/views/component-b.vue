@@ -4,7 +4,7 @@
     <a-input
       type="textarea"
       :rows="2"
-      placeholder="请输入组件B10内容 组件来自wanxi-vue-componet"
+      placeholder="请输入组件B12内容 组件来自wanxi-vue-componet"
       v-model="textareaValue">
     </a-input>
   </div>
