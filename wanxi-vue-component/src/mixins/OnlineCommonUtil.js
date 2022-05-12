@@ -1,4 +1,4 @@
-import { formatDate } from '../utils/util'
+import { formatDate } from 'wanxi-vue-fm/src/utils/util'
 import Area from '../components/_util/Area'
 import { postAction } from '../api/manage'
 
