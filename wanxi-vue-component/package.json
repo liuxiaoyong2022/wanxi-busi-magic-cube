@@ -1,6 +1,6 @@
 {
   "name": "wanxi-vue-component",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "A Vue.js project",
   "author": "lxy",
   "private": false,
@@ -99,7 +99,7 @@
     "vue-template-compiler": "^2.6.10",
     "vuedraggable": "2.20.0",
     "vuex": "^3.1.0",
-    "wanxi-vue-fm": "^1.2.39",
+    "wanxi-vue-fm": "^1.2.42",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
